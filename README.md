@@ -5,5 +5,6 @@
 ##### Circle
 ##### Stack
 ##### Queue
-This is comed complished by JavaScript,and I want to use JS better through this thoed;
+This is complished by JavaScript,and I want to use JS better through this way!
+One day,I will be Stronger!!!!
 ![](http://pic2016.ytqmx.com:82/2015/1207/18/2.jpg!960.jpg)
