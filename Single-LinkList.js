@@ -1,59 +1,61 @@
-//采用JX大佬讲的，构造函数标字段，原型里面添方法
-function Node(data){
-    this.data = data;
+function Node(element) {
+    this.element = element;
     this.next = null;
 }
-function Creat(){
-    this.head = new Node('head');//头结点
+function LinkedList(){
+    this.head = new Node('head'); // 头节点
 }
-//寻找目标节点，并且返回所在位置
-Creat.prototype.Find = function(item){
-    var curNode = this.head;
-    while(curNode.next != null && curNode.data != item){
-        curNode = curNode.next;
+
+// 遍历链表，查找给定数据
+LinkedList.prototype.find = function(item) {
+    var currNode = this.head;
+    while(currNode.element != item){
+        currNode = currNode.next;
     }
-    return curNode;
+    return currNode;
 }
-//插入。后插
-Creat.prototype.Insert = function(item,index){
-    var curNode = this.Find(index);
-    var tempNode = new Node(item);
-    tempNode.next = curNode.next;
-    curNode.next = tempNode;
+
+// 在链表中插入节点，需要修改前一个链表的指向，和当前列表的指向
+LinkedList.prototype.insert = function(newElement, item){
+    var newNode = new Node(newElement);
+    var currNode = this.find(item);
+    newNode.next = currNode.next;
+    currNode.next = newNode;
 }
-//输出节点的元素
-Creat.prototype.Display = function(){
-    var curNode = this.head;
-    while(curNode.next != null){
-        console.log(curNode.next.data);
-        curNode = curNode.next;
-    }
-}
-//寻找前驱节点
-Creat.prototype.FindPrevious = function(item){
-    var curNode = this.head;
-    while( curNode.next != null && curNode.next.element != item ){
-        curNode = curNode.next;
-    }
-    return curNode;
-}
-//删除节点
-Creat.prototype.Remove = function(item){
-    var preNode = this.FindPrevious(item);
-    if(preNode.next != null){
-        preNode.next = preNode.next.next;
+
+// 显示链表中的节点
+LinkedList.prototype.display = function(){
+    var currNode = this.head;
+    while( currNode.next != null ){
+        console.log(currNode.next.element);
+        currNode = currNode.next;
     }
 }
 
-//测试
-var temp = new Creat();
-temp.Insert("LiZhuo","head");
-temp.Insert("WuTong","LiZhuo");
-temp.Insert("DuanWenJie","WuTong");
-temp.Insert("AiLiYa","DuanWenJie");
-temp.Display();
+// 返回节点的前一个节点
+LinkedList.prototype.findPrevious = function(item){
+    var currNode = this.head;
+    while( currNode.next != null && currNode.next.element != item ){
+        currNode = currNode.next;
+    }
+    return currNode;
+}
+
+// 从链表中删除一个节点
+LinkedList.prototype.remove = function(item){
+    var prevNode = this.findPrevious(item);
+    if( prevNode.next != null ){
+        // 让前一个节点指向待删除节点的后一个节点
+        prevNode.next = prevNode.next.next;
+    }
+}
+
+var temp = new LinkedList();
+temp.insert("LiZhuo","head");
+temp.insert("WuTong","LiZhuo");
+temp.insert("DuanWenJie","WuTong");
+temp.insert("AiLiYa","DuanWenJie");
+temp.display();
 console.log(    );
-temp.Remove("LiZhuo");
-temp.Display();
-
-
+temp.remove("LiZhuo");
+temp.display();
