@@ -1,14 +1,12 @@
 # Data-Struct-Test
-##### LinkList [Link](https://github.com/BIRlz/Data-Struct-Test/tree/master/Stack)
+## LinkList [Link](https://github.com/BIRlz/Data-Struct-Test/tree/master/Stack)
 ### SomeLink
 [Single](https://github.com/BIRlz/Data-Struct-Test/blob/master/Stack/Single-LinkList.js)
-
 [Double](https://github.com/BIRlz/Data-Struct-Test/blob/master/Stack/Double-LinkList.js)
-
 [Circle](#)
-##### Stack
+## Stack
 [Link](https://github.com/BIRlz/Data-Struct-Test/tree/master/Stack/Stack.js)
-##### Queue
+## Queue
 [Link](https://github.com/BIRlz/Data-Struct-Test/tree/master/Queue)
 This is complished by JavaScript,and I want to use JS better through this way!
 One day,I will be Stronger!!!!
