@@ -4,7 +4,7 @@ This is a bubbleSort, very easy.No need to say anything.
 function bubbleSort(array){
     var n = array.length;
     for(var i = 0;i < n ; i++){
-        for(var j = i;j < n ; j++){
+        for(var j = 0;j < n - i - 1 ; j++){
             if(array[i] > array[j]){
                 var temp = array[i];
                 array[i] = array[j];
