@@ -22,7 +22,7 @@ function checkin(){
 				then cut -f 2 userinfo.dat | while read line2
 					do 
 						if test line2 = $passd
-						#用户存在，并进行签到
+						#用户存在，并进行判断时间和签退
 						then 
 							echo "登录成功："		  
         						hour=`date +%k` 
@@ -60,7 +60,7 @@ function checkout(){
 				then cut -f 2 userinfo.dat | while read line2
 					do 
 						if test line2 = $passd
-						#用户存在，并进行签到
+						#用户存在，并进行判断时间和签退
 						then 
 							echo "登录成功："		  
         						hour=`date +%k` 
@@ -87,6 +87,7 @@ function inquire(){
 	echo "请输入你要查看的员工用户名："
 	read usrname
 	echo "欢迎查看 $usrname 的记录"
+	# 直接使用grep做正则匹配，输出check.dat文件中以$usrname 开头的那些行的信息
 	grep $usrname check.dat
 }
 function logout(){
